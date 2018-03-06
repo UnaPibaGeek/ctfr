@@ -50,7 +50,7 @@ python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
 </p>
 
 <p align="center">
-  <img src="http://www.semecayounexploit.com/CTFR/CTFR-FB.png" />
+  <img src="http://www.semecayounexploit.com/CTFR/CTFR-FB2.png" />
 </p>
 
 
