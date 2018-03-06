@@ -4,9 +4,9 @@ How it works? CTFR does not use neither dictionary attack nor brute-force, it ju
 For more information about CT logs, check www.certificate-transparency.org.
 
 ## Getting Started
-Plase, follow the instructions below for installing and run CTFR.
+Please, follow the instructions below for installing and run CTFR.
 
-### Prerequisites
+### Pre-requisites
 Make sure you have installed the following tools:
 ```
 Python 3.0 or later.
@@ -23,4 +23,13 @@ pip3 install -r requirements.txt
 ### Running
 ```
 python3 ctfr.py --help
+```
+
+## Usage
+Parameters and examples of use.
+
+### Parameters
+```
+-d [target domain] (required)
+-o [Output file] (optional)
 ```
