@@ -25,6 +25,7 @@ pip3 install -r requirements.txt
 python3 ctfr.py --help
 ```
 
+
 ## Usage
 Parameters and examples of use.
 
@@ -42,4 +43,9 @@ python3 ctfr.py -d starbucks.com
 python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
 ```
 
+
 ## Screenshots
+
+
+## Author
+* **Sheila A. Berta** - **[(@UnaPibaGeek)](https://www.twitter.com/UnaPibaGeek)**.
