@@ -48,4 +48,4 @@ python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
 
 
 ## Author
-* **Sheila A. Berta** - **[(@UnaPibaGeek)](https://www.twitter.com/UnaPibaGeek)**.
+* *Sheila A. Berta* - [(@UnaPibaGeek)](https://www.twitter.com/UnaPibaGeek).*
