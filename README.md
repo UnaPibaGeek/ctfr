@@ -30,6 +30,16 @@ Parameters and examples of use.
 
 ### Parameters
 ```
--d [target domain] (required)
--o [Output file] (optional)
+-d --domain [target_domain] (required)
+-o --output [output_file] (optional)
 ```
+
+### Examples
+```
+python3 ctfr.py -d starbucks.com
+```
+```
+python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
+```
+
+## Screenshots
