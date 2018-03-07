@@ -11,7 +11,7 @@ import json
 import requests
 
 ## # CONTEXT VARIABLES # ##
-version = 1.0
+version = 1.1
 
 ## # MAIN FUNCTIONS # ##
 
@@ -57,6 +57,8 @@ def main():
 
 	
 	print("\n[!] ---- TARGET: {d} ---- [!] \n".format(d=target))
+
+	subdomains = set(subdomains)
 
 	for subdomain in subdomains:
 		print("[-]  {s}".format(s=subdomain))
