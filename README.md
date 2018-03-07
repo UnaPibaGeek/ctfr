@@ -14,15 +14,15 @@ pip3 (sudo apt-get install python3-pip).
 ```
 
 ### Installing
-```
-git clone https://github.com/UnaPibaGeek/ctfr.git
-cd ctfr
-pip3 install -r requirements.txt
+```bash
+$ git clone https://github.com/UnaPibaGeek/ctfr.git
+$ cd ctfr
+$ pip3 install -r requirements.txt
 ```
 
 ### Running
-```
-python3 ctfr.py --help
+```bash
+$ python3 ctfr.py --help
 ```
 
 
@@ -36,11 +36,11 @@ Parameters and examples of use.
 ```
 
 ### Examples
+```bash
+$ python3 ctfr.py -d starbucks.com
 ```
-python3 ctfr.py -d starbucks.com
-```
-```
-python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
+```bash
+$ python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
 ```
 
 
