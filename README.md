@@ -46,11 +46,11 @@ python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
 
 ## Screenshots
 <p align="center">
-  <img src="http://www.semecayounexploit.com/CTFR/CTFR-ST1.png" />
+  <img src="http://www.semecayounexploit.com/CTFR/CTFR-ST.png" />
 </p>
 
 <p align="center">
-  <img src="http://www.semecayounexploit.com/CTFR/CTFR-FB3.png" />
+  <img src="http://www.semecayounexploit.com/CTFR/CTFR-FB.png" />
 </p>
 
 
