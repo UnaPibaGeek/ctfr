@@ -58,7 +58,7 @@ def main():
 	
 	print("\n[!] ---- TARGET: {d} ---- [!] \n".format(d=target))
 
-	subdomains = set(subdomains)
+	subdomains = sorted(set(subdomains))
 
 	for subdomain in subdomains:
 		print("[-]  {s}".format(s=subdomain))
