@@ -54,5 +54,20 @@ $ python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
 </p>
 
 
+## Running with Docker
+
+Running `ctfr` in docker enables for easy cloud deployment.
+
+##### [Demo](https://asciinema.org/a/P1xuBzRPoFNnT5rVxQD0uqbLm)
+To run `ctfr` in a docker container, simply build and run as follows:  
+```bash
+git clone https://github.com/UnaPibaGeek/ctfr
+cd ctfr
+docker build -t ctfr .
+docker run -it ctfr -d example.com
+
+
+```
+
 ## Author
 * *Sheila A. Berta - [(@UnaPibaGeek)](https://www.twitter.com/UnaPibaGeek).*
