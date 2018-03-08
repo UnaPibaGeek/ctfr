@@ -51,7 +51,7 @@ def main():
     req = requests.get("https://crt.sh/?q=%.{d}&output=json".format(d=target))
 
     if req.status_code != 200:
-        print("[X] Error! Invalid domain or information not available!") 
+        print("[-] Error! Invalid domain or information not available!") 
         exit(1)
 
     json_data = json.loads('[{}]'.format(req.text.replace('}{', '},{')))
@@ -63,19 +63,24 @@ def main():
     print("\n[!] ---- TARGET: {d} ---- [!] \n".format(d=target))
 
     subdomains = sorted(set(subdomains))
+
    # Perform DNS resolution
-    if resolve is not None:
+    if resolve is not False:
         resolver = dns.resolver.Resolver()
         for subdomain in subdomains:
           try:
             response = resolver.query(subdomain,"A")
             ips = []            
             for ip in response:
-                ips.append(str(ip))
+            	ips.append(str(ip))
+          except KeyboardInterrupt:
+          	print("[*] Caught Keyboard Interrupt! Exiting...\n")
+          	exit(1)
           except:
             ips = ''
+          
           ips = ','.join(ips)
-          print("{s},{i}".format(s=subdomain,i=ips))
+          print("{s}:{i}".format(s=subdomain,i=ips))
     # Continue without DNS resolution    
     else:
         for subdomain in subdomains:
