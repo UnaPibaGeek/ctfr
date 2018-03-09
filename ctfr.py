@@ -34,10 +34,10 @@ def banner():
     '''.format(v=version)
     print(b)
 
-def save_subdomains(subdomain,output_file):
+def save_subdomains(subdomains,output_file):
     with open(output_file,"a") as f:
-        f.write(subdomain + '\n')
-        f.close()
+        for subdomain in subdomains:
+	        f.write(subdomain + '\n')
 
 def main():
     banner()
@@ -78,19 +78,21 @@ def main():
           	exit(1)
           except:
             ips = ''
-          
+          # Join all returned IPs into string
           ips = ','.join(ips)
           print("{s}:{i}".format(s=subdomain,i=ips))
-    # Continue without DNS resolution    
+          
+
+    # Print domains without performing DNS resolution
     else:
         for subdomain in subdomains:
             print("{s}".format(s=subdomain))
     
     # Save domains to output file    
     if output is not None:
-        save_subdomains(subdomain,output)
+        save_subdomains(subdomains,output)
 
-        print("\n\n[!]  Done. Have a nice day! ;).")
+	print("\n\n[!]  Done. Have a nice day! ;).")
 
 main()
     
