@@ -24,7 +24,12 @@ def parse_args():
 
 def banner():
 	global version
-	from pyfiglet import figlet_format
+	try:
+		from pyfiglet import figlet_format
+	except ImportError:
+		def figlet_format(f):
+			return f
+
 	b = figlet_format("        CTFR") + \
 	'''     Version {v} - Hey don't miss AXFR!
     Made by Sheila A. Berta (UnaPibaGeek)
