@@ -44,7 +44,7 @@ $ python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
 ```
 
 ### With Docker
-If you want to use it without installing it to your computer, you can use [this lightweight (97.8MB) Docker image](https://hub.docker.com/r/johnpaulada/ctfr/).
+I think it's a little bit crazy to use Docker for running such a little python script, but if you want to do it anyway, you can download [this lightweight (97.8MB) Docker image](https://hub.docker.com/r/johnpaulada/ctfr/) made by John Paulada.
 
 The instructions are there.
 
