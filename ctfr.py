@@ -7,11 +7,12 @@
 """
 
 ## # LIBRARIES # ##
+import re
 import json
 import requests
 
 ## # CONTEXT VARIABLES # ##
-version = 1.1
+version = 1.2
 
 ## # MAIN FUNCTIONS # ##
 
@@ -24,12 +25,20 @@ def parse_args():
 
 def banner():
 	global version
-	from pyfiglet import figlet_format
-	b = figlet_format("        CTFR") + \
-	'''     Version {v} - Hey don't miss AXFR!
+	b = '''
+          ____ _____ _____ ____  
+         / ___|_   _|  ___|  _ \ 
+        | |     | | | |_  | |_) |
+        | |___  | | |  _| |  _ < 
+         \____| |_| |_|   |_| \_\\
+	
+     Version {v} - Hey don't miss AXFR!
     Made by Sheila A. Berta (UnaPibaGeek)
 	'''.format(v=version)
 	print(b)
+	
+def clear_url(target):
+	return re.sub('.*www\.','',target,1).split('/')[0].strip()
 
 def save_subdomains(subdomain,output_file):
 	with open(output_file,"a") as f:
@@ -41,7 +50,7 @@ def main():
 	args = parse_args()
 
 	subdomains = []
-	target = args.domain
+	target = clear_url(args.domain)
 	output = args.output
 
 	req = requests.get("https://crt.sh/?q=%.{d}&output=json".format(d=target))
