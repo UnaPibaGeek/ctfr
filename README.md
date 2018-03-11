@@ -58,5 +58,25 @@ The instructions are there.
 </p>
 
 
+### Running with Docker
+
+For those of you that can't run python natively, you may use the unwavering whale. Build your image:
+
+```
+docker build -t ctfr .
+```
+
+And just run it!
+
+```
+docker run --rm ctfr -d starbucks.com
+```
+
+For keeping output files, just mount a volume. E.g.:
+
+```
+docker run --rm -v ${PWD}:/usr/ ctfr -d starbucks.com -o subdomains_sb.txt
+```
+
 ## Author
 * *Sheila A. Berta - [(@UnaPibaGeek)](https://www.twitter.com/UnaPibaGeek).*
