@@ -1,7 +1,7 @@
 # CTFR
 Do you miss AXFR technique? This tool allows to get the subdomains from a HTTP**S** website in a few seconds.  
 How it works? CTFR does not use neither dictionary attack nor brute-force, it just abuses of Certificate Transparency logs.  
-For more information about CT logs, check www.certificate-transparency.org.
+For more information about CT logs, check www.certificate-transparency.org and [crt.sh](https://crt.sh/).
 
 ## Getting Started
 Please, follow the instructions below for installing and run CTFR.
