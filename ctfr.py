@@ -50,8 +50,8 @@ def main():
 
 	proxies = {
 #		Uncomment http and https variables:
-		'http': 'http://username:password@hostname:port',
-		'https': 'http://username:password@hostname:port',
+#		'http': 'http://username:password@hostname:port',
+#		'https': 'http://username:password@hostname:port',
 	}
 
 	banner()
