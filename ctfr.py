@@ -43,7 +43,7 @@ def clear_url(target):
 def save_subdomains(subdomain,output_file):
 	with open(output_file,"a") as f:
 		f.write(subdomain + '\n')
-		f.close()
+		
 
 def main():
 	banner()
