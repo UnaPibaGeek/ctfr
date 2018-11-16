@@ -14,6 +14,7 @@ import requests
 ## # CONTEXT VARIABLES # ##
 version = 1.2
 
+
 ## # MAIN FUNCTIONS # ##
 
 def parse_args():
@@ -46,6 +47,13 @@ def save_subdomains(subdomain,output_file):
 		f.close()
 
 def main():
+
+	proxies = {
+#		Uncomment http and https variables:
+#		'http': 'http://username:password@hostname:port',
+#		'https': 'http://username:password@hostname:port',
+	}
+
 	banner()
 	args = parse_args()
 
@@ -53,13 +61,16 @@ def main():
 	target = clear_url(args.domain)
 	output = args.output
 
-	req = requests.get("https://crt.sh/?q=%.{d}&output=json".format(d=target))
+	req = requests.Session()
+	req.proxies = proxies
 
-	if req.status_code != 200:
+	response = req.get("https://crt.sh/?q=%.{d}&output=json".format(d=target))
+	
+	if response.status_code != 200:
 		print("[X] Information not available!") 
 		exit(1)
 
-	json_data = json.loads('[{}]'.format(req.text.replace('}{', '},{')))
+	json_data = json.loads('[{}]'.format(response.text.replace('}{', '},{')))
 
 	for (key,value) in enumerate(json_data):
 		subdomains.append(value['name_value'])
