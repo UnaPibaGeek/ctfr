@@ -158,3 +158,5 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
+# Generated text files.
+*.txt
