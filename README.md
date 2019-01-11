@@ -1,6 +1,7 @@
 # CTFR
 Do you miss AXFR technique? This tool allows to get the subdomains from a HTTP**S** website in a few seconds.  
-How it works? CTFR does not use neither dictionary attack nor brute-force, it just abuses of Certificate Transparency logs.  
+How it works? CTFR does not use neither dictionary attack nor brute-force, it just abuses of Certificate Transparency logs. 
+Additional domains are grabbed from the `Names` field of the record stored at [censys.io](https://censys.io).
 For more information about CT logs, check www.certificate-transparency.org and [crt.sh](https://crt.sh/).
 
 ## Getting Started
@@ -19,6 +20,11 @@ $ git clone https://github.com/UnaPibaGeek/ctfr.git
 $ cd ctfr
 $ pip3 install -r requirements.txt
 ```
+If you want to also search for additional domains from censys.io, you also need to install BeautifulSoup4:
+```bash
+$ pip3 install beautifulsoup4
+```
+This was left out of the requirements.txt file so you weren't forced to install it.
 
 ### Running
 ```bash
@@ -33,6 +39,7 @@ Parameters and examples of use.
 ```
 -d --domain [target_domain] (required)
 -o --output [output_file] (optional)
+-a --alt (optional, single switch)
 ```
 
 ### Examples
@@ -41,6 +48,9 @@ $ python3 ctfr.py -d starbucks.com
 ```
 ```bash
 $ python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
+```
+```bash
+$ python3 ctfr.py -d facebook.com -a -o /home/shei/subdomains_fb.txt
 ```
 
 ### With Docker
