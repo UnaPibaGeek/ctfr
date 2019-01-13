@@ -8,7 +8,6 @@
 
 ## # LIBRARIES # ##
 import re
-import json
 import requests
 
 ## # CONTEXT VARIABLES # ##
@@ -59,9 +58,7 @@ def main():
 		print("[X] Information not available!") 
 		exit(1)
 
-	json_data = json.loads('[{}]'.format(req.text.replace('}{', '},{')))
-
-	for (key,value) in enumerate(json_data):
+	for (key,value) in enumerate(req.json()):
 		subdomains.append(value['name_value'])
 
 	
