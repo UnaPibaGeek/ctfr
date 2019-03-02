@@ -58,8 +58,8 @@ def main():
 		print("[X] Information not available!") 
 		exit(1)
 
-	for (key,value) in enumerate(req.json()):
-		subdomains.append(value['name_value'])
+	for sub in req.json():
+		subdomains.append(sub['name_value'])
 
 	
 	print("\n[!] ---- TARGET: {d} ---- [!] \n".format(d=target))
