@@ -44,7 +44,7 @@ $ python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
 ```
 
 ### With Docker
-I think it's a little bit crazy to use Docker for running such a little python script, but if you want to do it anyway, you can use [this Docker image](https://hub.docker.com/r/unapibageek/ctfr)
+I think it's a little bit crazy to use Docker for running such a little python script, but if you want to do it anyway, you can use [this Docker image](https://hub.docker.com/r/unapibageek/ctfr).
 
 The instructions are there.
 
