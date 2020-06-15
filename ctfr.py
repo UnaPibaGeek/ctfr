@@ -9,6 +9,8 @@
 ## # LIBRARIES # ##
 import re
 import requests
+import datetime
+from dateutil.parser import parse
 
 ## # CONTEXT VARIABLES # ##
 version = 1.2
@@ -19,6 +21,7 @@ def parse_args():
 	import argparse
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-d', '--domain', type=str, required=True, help="Target domain.")
+        parser.add_argument('-v', '--validonly', action='store_true', help="Only include valid certs.")
 	parser.add_argument('-o', '--output', type=str, help="Output file.")
 	return parser.parse_args()
 
@@ -50,6 +53,7 @@ def main():
 
 	subdomains = []
 	target = clear_url(args.domain)
+        validonly = args.validonly
 	output = args.output
 
 	req = requests.get("https://crt.sh/?q=%.{d}&output=json".format(d=target))
@@ -59,7 +63,14 @@ def main():
 		exit(1)
 
 	for (key,value) in enumerate(req.json()):
-		subdomains.append(value['name_value'])
+                not_before = parse(value['not_before'])
+                not_after = parse(value['not_after'])
+                now = datetime.datetime.now()
+                if validonly:
+                        if (not_before < now < not_after):
+                                subdomains.append(value['name_value'])
+                else:
+                        subdomains.append(value['name_value'])
 
 	
 	print("\n[!] ---- TARGET: {d} ---- [!] \n".format(d=target))
