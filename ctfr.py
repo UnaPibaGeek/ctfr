@@ -59,12 +59,11 @@ def main():
 		exit(1)
 
 	for (key,value) in enumerate(req.json()):
-		subdomains.append(value['name_value'])
+                subdomains.extend(value['name_value'].split('\n'))
 
-	
 	print("\n[!] ---- TARGET: {d} ---- [!] \n".format(d=target))
 
-	subdomains = sorted(set(subdomains))
+	subdomains = sorted(list(set(subdomains)))
 
 	for subdomain in subdomains:
 		print("[-]  {s}".format(s=subdomain))
@@ -73,6 +72,6 @@ def main():
 
 	print("\n\n[!]  Done. Have a nice day! ;).")
 
-
-main()
 	
+if __name__ == "__main__":
+	main()
