@@ -4,7 +4,7 @@ How it works? CTFR does not use neither dictionary attack nor brute-force, it ju
 For more information about CT logs, check www.certificate-transparency.org and [crt.sh](https://crt.sh/).
 
 ## Getting Started
-Please, follow the instructions below for installing and run CTFR.
+Please, Follow the instructions below for installing and run CTFR.
 
 ### Pre-requisites
 Make sure you have installed the following tools:
@@ -44,7 +44,7 @@ $ python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
 ```
 
 ### With Docker
-I think it's a little bit crazy to use Docker for running such a little python script, but if you want to do it anyway, you can use [this Docker image](https://hub.docker.com/r/unapibageek/ctfr).
+I think it's a little bit crazy to use Docker for running such a little python script, But if you want to do it anyway, You can use [this Docker image](https://hub.docker.com/r/unapibageek/ctfr).
 
 The instructions are there.
 
