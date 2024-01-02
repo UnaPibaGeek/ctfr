@@ -9,7 +9,7 @@
 ## # LIBRARIES # ##
 import re
 import requests
-import socket  # Import the library to resolve IP addresses
+import socket  # Import the library to resolve IP addresses.
 
 ## # CONTEXT VARIABLES # ##
 version = 1.2
@@ -63,7 +63,7 @@ def main():
     try:
         req = requests.get("https://crt.sh/?q=%.{d}&output=json".format(d=target))
 
-        req.raise_for_status()  # Throw an exception if the request was not successful
+        req.raise_for_status()  # Throw an exception if the request was not successful.
 
         json_data = req.json()
 
