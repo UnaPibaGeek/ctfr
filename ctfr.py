@@ -24,7 +24,7 @@ def parse_args():
 
 def banner():
 	global version
-	b = '''
+	b = r'''
           ____ _____ _____ ____  
          / ___|_   _|  ___|  _ \ 
         | |     | | | |_  | |_) |
@@ -37,7 +37,7 @@ def banner():
 	print(b)
 	
 def clear_url(target):
-	return re.sub('.*www\.','',target,1).split('/')[0].strip()
+	return re.sub(r'.*www\.', '', target, count=1).split('/')[0].strip()
 
 def save_subdomains(subdomain,output_file):
 	with open(output_file,"a") as f:
