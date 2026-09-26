@@ -1,62 +1,68 @@
 # CTFR
-Do you miss AXFR technique? This tool allows to get the subdomains from a HTTP**S** website in a few seconds.  
-How it works? CTFR does not use neither dictionary attack nor brute-force, it just abuses of Certificate Transparency logs.  
-For more information about CT logs, check www.certificate-transparency.org and [crt.sh](https://crt.sh/).
 
-## Getting Started
-Please, follow the instructions below for installing and run CTFR.
+CTFR discovers subdomains from public [Certificate Transparency](https://certificate.transparency.dev/) logs through [crt.sh](https://crt.sh/). It does not use dictionaries or brute force.
 
-### Pre-requisites
-Make sure you have installed the following tools:
-```
-Python 3.0 or later.
-pip3 (sudo apt-get install python3-pip).
-```
+## Requirements
 
-### Installing
+- Python 3.9 or later
+- Internet access to `crt.sh`
+
+## Installation
+
 ```bash
-$ git clone https://github.com/UnaPibaGeek/ctfr.git
-$ cd ctfr
-$ pip3 install -r requirements.txt
+git clone https://github.com/UnaPibaGeek/ctfr.git
+cd ctfr
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install .
 ```
 
-### Running
-```bash
-$ python3 ctfr.py --help
-```
-
+This installs the `ctfr` command. For development, use `python -m pip install -e .` instead.
 
 ## Usage
-Parameters and examples of use.
 
-### Parameters
-```
--d --domain [target_domain] (required)
--o --output [output_file] (optional)
+```text
+ctfr -d DOMAIN_OR_URL [-o FILE] [--append] [--timeout SECONDS]
 ```
 
-### Examples
+The target can be a domain or a complete URL:
+
 ```bash
-$ python3 ctfr.py -d starbucks.com
+ctfr -d example.com
+ctfr -d https://example.com/path
+ctfr -d example.com -o subdomains.txt
+ctfr -d example.com -o subdomains.txt --append
 ```
+
+By default, `--output` replaces the destination file with sorted, unique results. Use `--append` to preserve its contents and add only names that are not already present.
+
+You can also run the source file directly after installing the requirements:
+
 ```bash
-$ python3 ctfr.py -d facebook.com -o /home/shei/subdomains_fb.txt
+python -m pip install -r requirements.txt
+python3 ctfr.py -d example.com
 ```
 
-### With Docker
-I think it's a little bit crazy to use Docker for running such a little python script, but if you want to do it anyway, you can use [this Docker image](https://hub.docker.com/r/unapibageek/ctfr).
+## Tests
 
-The instructions are there.
+The test suite does not make external network requests:
 
-## Screenshots
-<p align="center">
-  <img src="https://www.semecayounexploit.com/CTFR/CTFR-ST.png" />
-</p>
+```bash
+python -m unittest discover -s tests -v
+```
 
-<p align="center">
-  <img src="https://www.semecayounexploit.com/CTFR/CTFR-FB.png" />
-</p>
+## Changes
 
+See [CHANGELOG.md](CHANGELOG.md) for the complete list of fixes, new features, behavior changes, validation performed, and known limitations.
+
+## Responsible use
+
+Certificate Transparency data is public, but you should only investigate systems when you have authorization to do so.
+
+## License
+
+CTFR is distributed under the GNU General Public License v3.0. See [LICENSE](LICENSE).
 
 ## Author
-* *Sheila A. Berta - [(@UnaPibaGeek)](https://www.twitter.com/UnaPibaGeek).*
+
+Sheila A. Berta ([@UnaPibaGeek](https://www.twitter.com/UnaPibaGeek))

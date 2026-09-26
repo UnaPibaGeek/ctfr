@@ -1,1 +1,1 @@
-requests
+requests>=2.32.0,<3.0.0
