@@ -37,6 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Output files are opened once instead of once per result and are always written as UTF-8.
 - Updated the `requests` dependency to the supported range `>=2.32.0,<3.0.0`.
 - Replaced outdated README installation and usage instructions.
+- Pointed the README clone instructions at this fork and credited the original author.
 
 ### Fixed
 
