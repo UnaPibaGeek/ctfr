@@ -20,6 +20,16 @@ $ cd ctfr
 $ pip3 install -r requirements.txt
 ```
 
+### Installing with OTinstaller
+On Linux, [OTinstaller](https://github.com/OSINTVerseHQ/OTinstaller) is a third-party tool manager that clones this repository and installs CTFR into its own virtualenv. It isn't maintained by the CTFR author, so please report problems with it [on the OTinstaller tracker](https://github.com/OSINTVerseHQ/OTinstaller/issues).
+
+```bash
+$ pipx install otinstaller
+$ otinstaller init
+$ otinstaller install ctfr
+$ otinstaller run ctfr -- -d starbucks.com   # same as python3 ctfr.py -d starbucks.com
+```
+
 ### Running
 ```bash
 $ python3 ctfr.py --help
